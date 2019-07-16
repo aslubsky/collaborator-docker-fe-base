@@ -14,7 +14,13 @@ RUN apt-get install -y \
     supervisor
 
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
-RUN apt-get install -y nodejs
+
+RUN echo "deb http://nginx.org/packages/debian/ stretch nginx" > /etc/apt/sources.list.d/nginx.list
+RUN echo "deb-src http://nginx.org/packages/debian/ stretch nginx" >> /etc/apt/sources.list.d/nginx.list
+RUN cd /tmp && wget http://nginx.org/keys/nginx_signing.key && apt-key add nginx_signing.key
+
+RUN apt-get update
+RUN apt-get install -y nginx nodejs
 
 RUN npm install -g node-gyp gulp
 
