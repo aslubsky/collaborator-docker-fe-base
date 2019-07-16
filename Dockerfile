@@ -8,6 +8,7 @@ RUN apt-get install -y \
     dialog \
     bsdutils \
     make \
+    nano \
     g++ \
     git \
     supervisor
