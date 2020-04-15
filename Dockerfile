@@ -9,6 +9,7 @@ RUN apt-get install -y \
     bsdutils \
     make \
     nano \
+    jq \
     g++ \
     git \
     supervisor
