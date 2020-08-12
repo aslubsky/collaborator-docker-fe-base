@@ -23,7 +23,7 @@ RUN cd /tmp && wget http://nginx.org/keys/nginx_signing.key && apt-key add nginx
 RUN apt-get update
 RUN apt-get install -y nginx nodejs
 
-RUN npm install -g node-gyp gulp
+RUN npm install -g node-gyp
 
 #
 # Remove the packages that are no longer required after the package has been installed
