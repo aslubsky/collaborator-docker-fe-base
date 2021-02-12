@@ -14,7 +14,7 @@ RUN apt-get install -y \
     git \
     supervisor
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 
 RUN echo "deb http://nginx.org/packages/debian/ stretch nginx" > /etc/apt/sources.list.d/nginx.list
 RUN echo "deb-src http://nginx.org/packages/debian/ stretch nginx" >> /etc/apt/sources.list.d/nginx.list
@@ -22,8 +22,6 @@ RUN cd /tmp && wget http://nginx.org/keys/nginx_signing.key && apt-key add nginx
 
 RUN apt-get update
 RUN apt-get install -y nginx nodejs
-
-RUN npm install -g node-gyp
 
 #
 # Remove the packages that are no longer required after the package has been installed
